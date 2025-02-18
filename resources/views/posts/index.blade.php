@@ -5,11 +5,11 @@
         <h1>Blog Posts</h1>
         <ul>
         @foreach($posts as $post)
-            <div>
+            <li class="post">
                 <a href="{{ route('posts.show', $post->id) }}">{{ $post->title }}</a> 
                 <br>
                 Published {{ $post->created_at }}
-            </div>
+            </li>
             <br>
         @endforeach
         </ul>

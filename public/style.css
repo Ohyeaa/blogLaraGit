@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+main {
+    margin-top: 10.4rem;
+    margin-left: 6.56rem;
+}
+
+h1 {
+    margin: 2.4rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.write-form {
+    margin-left: 2.64rem;
+}
+
+
+
+#nav {
+    background-color: darkslategray;
+    font-size: x-large;
+    padding: 3rem;
+    padding-left: 4.5rem;
+
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+
+.nav-space {
+    margin-left: 2rem;
+    display: inline;
+}
+
+.nav-link {
+    color: antiquewhite;
+}
+
+.nav-link:visited {
+    color: grey;
+}
+
+.nav-link:hover {
+    color: cadetblue;
+}
+
+a {
+    color: cadetblue;
+    text-decoration: none;
+}
+
+a:hover {
+    color: blue;
+}
+
+ul {
+    list-style-type: none;
+  }
+
+.post {
+    background-color: lightgoldenrodyellow;
+    margin-right: 10rem;
+    font-size: larger;
+}
+
+#login-form {
+    margin: 2.45em;
+}
+
+
+
+
+
+/* Create Post*/
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 85%;
+    height: min-content;
+}
+
+.form-field input, .form-field textarea {
+    width: 100%;
+}
+
+.form-field textarea {
+    resize: vertical;
+    height: 18rem;
+}
