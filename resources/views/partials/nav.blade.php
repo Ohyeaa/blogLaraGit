@@ -10,13 +10,25 @@
                 Write Post
             </a>
         </li>
-        <li class="nav-space">
         @guest
-            <a href="{{ route('auth.create') }}" id="login-link" class="nav-link{{ Route::is('auth.create') ? '-current' : '' }}">
+        <li class="nav-space">
+            <a href="{{ route('auth.create') }}" class="nav-link{{ Route::is('auth.create') ? '-current' : '' }}">
                 Login
             </a>
-        @endguest
         </li>
+        <li class="nav-space">
+            <a href="{{ route('user.create') }}" class="nav-link{{ Route::is('user.create') ? '-current' : '' }}">
+                Register
+            </a>
+        </li>
+        @endguest
+        @auth
+        <li class="nav-space">
+            <a href="{{ route('auth.delete') }}" class="nav-link">
+                Logout
+            </a>
+        </li>
+        @endauth
     </ul>
 </nav>
 

@@ -49,32 +49,30 @@ ul {
     width: 100%;
 }
 
+.nav-link {
+    text-decoration: none;
+}
+
 .nav-space {
+    margin-right: 3rem;
     margin-left: 2rem;
     display: inline-flex;
     flex-direction: column;
 }
 
-#login-link {
-    margin-left: auto;
+.nav-space a {
+    color: antiquewhite;
 }
 
-.nav-link {
-    text-decoration: none;
+.nav-space a:hover {
+    color: cadetblue;
 }
 
 .nav-link-current {
     text-decoration-thickness: 0.06rem;
-    text-underline-offset: 0.36rem;
+    text-underline-offset: 0.5rem;
 }
 
-.nav-link, .nav-link-current, .nav-link:visited {
-    color: antiquewhite;
-}
-
-.nav-link:hover {
-    color: cadetblue;
-}
 
 /* Create Post*/
 
@@ -101,7 +99,7 @@ ul {
 
 /* login */
 
-#login-form {
+.credential-form {
     margin: 2.45em;
 }
 
