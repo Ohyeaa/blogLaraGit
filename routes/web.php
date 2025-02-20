@@ -15,4 +15,6 @@ Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 
 Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
 
-Route::get('/auth/create', [AuthenticatorController::class, 'create'])->name('auth.create');
+
+
+Route::get('/login', [AuthenticatorController::class, 'create'])->name('auth.create');

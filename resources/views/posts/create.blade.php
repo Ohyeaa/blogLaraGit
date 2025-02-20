@@ -2,7 +2,7 @@
 
 @section('content')
     <main>
-        <h1>Write a Post</h1>
+        <h1>What's on your mind?</h1>
         <form action="{{ route('posts.store') }}" method="POST" class="write-form">
             @csrf
             <div class="form-field">

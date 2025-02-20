@@ -2,9 +2,9 @@
 
 @section('content')
     <main>
-        <article>
+        <article id="show-content-box">
             <h1>{{ $post->title }}</h1>
-            <p id="content">{{ $post->content }}</p>
+            <p id="show-content">{{ $post->content }}</p>
         </article>
     </main>
 @endsection

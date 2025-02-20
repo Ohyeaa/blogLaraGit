@@ -4,6 +4,7 @@
     <main>
         <h1>Login</h1>
         <form action="" id="login-form">
+            @csrf
             <label for="email">Email</label>
             <input type="text" name="email" id="email" placeholder="example@example.com">
             <label for="password">Password</label>

@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\User;
 
 
 /**
@@ -22,6 +23,7 @@ class PostFactory extends Factory
             'content' => fake()->sentences(15, true),
             'is_premium' => fake()->boolean(),
             'created_at' => fake()->date(),
+            'user_id' => User::inRandomOrder()->first()->id,
         ];
     }
 }

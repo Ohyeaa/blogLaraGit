@@ -4,7 +4,7 @@
 }
 
 main {
-    margin-top: 10.4rem;
+    margin-top: 10rem;
     margin-left: 6.56rem;
 }
 
@@ -13,68 +13,68 @@ h1 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.write-form {
-    margin-left: 2.64rem;
+/* index */
+
+.post-container a:hover {
+    color: blue;
 }
 
+.post-container {
+    background-color: lightgoldenrodyellow;
+    margin-right: 10rem;
+    font-size: larger;
+    padding: 0.4rem;
+    border: solid gray 0.07rem;
+}
 
+.post-container a {
+    color: cadetblue;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/** nav */
 
 #nav {
     background-color: darkslategray;
     font-size: x-large;
-    padding: 3rem;
+    padding: 2.5rem;
     padding-left: 4.5rem;
-
     overflow: hidden;
     position: fixed;
     top: 0;
     width: 100%;
 }
 
-
 .nav-space {
     margin-left: 2rem;
-    display: inline;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+#login-link {
+    margin-left: auto;
 }
 
 .nav-link {
-    color: antiquewhite;
+    text-decoration: none;
 }
 
-.nav-link:visited {
-    color: grey;
+.nav-link-current {
+    text-decoration-thickness: 0.06rem;
+    text-underline-offset: 0.36rem;
+}
+
+.nav-link, .nav-link-current, .nav-link:visited {
+    color: antiquewhite;
 }
 
 .nav-link:hover {
     color: cadetblue;
 }
-
-a {
-    color: cadetblue;
-    text-decoration: none;
-}
-
-a:hover {
-    color: blue;
-}
-
-ul {
-    list-style-type: none;
-  }
-
-.post {
-    background-color: lightgoldenrodyellow;
-    margin-right: 10rem;
-    font-size: larger;
-}
-
-#login-form {
-    margin: 2.45em;
-}
-
-
-
-
 
 /* Create Post*/
 
@@ -93,4 +93,24 @@ ul {
 .form-field textarea {
     resize: vertical;
     height: 18rem;
+}
+
+.write-form {
+    margin-left: 2.64rem;
+}
+
+/* login */
+
+#login-form {
+    margin: 2.45em;
+}
+
+/* show post */
+
+#show-content-box {
+    margin-right: 9rem;
+}
+
+#show-content {
+    margin-left: 2.42rem;
 }
