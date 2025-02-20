@@ -23,7 +23,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        $user_id = Auth::id();
+        return view('posts.create', compact('user_id'));
     }
 
     /**
@@ -31,14 +32,13 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
+        
         $validated = $request->validated();
         $post = new Post();
         $post->title = $validated['title'];
         $post->content = $validated['content'];
-        $post->user_id = Auth::id();
+        $post->user_id = $validated['user_id']; //without compacting create(): $post->user_id = Auth::id(); now I can mass assign with Item::create($validated);
         $post->save();
-
-        // mass assignment: // Item::create($validated);
 
         return redirect()->route('posts.index');
     }
