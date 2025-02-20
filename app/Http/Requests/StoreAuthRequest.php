@@ -26,4 +26,12 @@ class StoreAuthRequest extends FormRequest
             'password' => 'required',
         ];
     }
+
+    public function messages()
+    {
+        return [
+        'email.required' => 'The email field is required.',
+        'email.email' => 'Provided credentials don\'t match our records.',
+        ];
+    }
 }

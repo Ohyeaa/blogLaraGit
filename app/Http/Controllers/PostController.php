@@ -36,6 +36,8 @@ class PostController extends Controller
         $post->content = $validated['content'];
         $post->save();
 
+        // mass assignment: // Item::create($validated);
+
         return redirect()->route('posts.index');
     }
 

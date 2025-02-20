@@ -17,6 +17,7 @@ class LoginController extends Controller
         return view('auth.create');
     }
 
+    //login
     public function store(StoreAuthRequest $request)
     {
         $credentials = $request->validated();
@@ -27,12 +28,11 @@ class LoginController extends Controller
             return redirect()->intended();
         }
 
-        return back()->withErrors([
-            'email' => 'Provided credentials don\'t match our records.',
-        ])->onlyInput('email');
+        return back()->onlyInput('email'); //withErrors() seems unnessecary since Request class seems to handle errors
     }
 
-    public function delete(Request $request)
+    //logout
+    public function destroy(Request $request)
     {
         Auth::logout();
         $request->session()->invalidate();
