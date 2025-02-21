@@ -22,7 +22,6 @@
             <section>
                 <form action="{{ route('comments.store') }}" method="POST" class="form-field">
                     @csrf
-                    <input type="hidden" name="user_id" value="{{ $user_id }}">
                     <input type="hidden" name="post_id" value="{{ $post->id }}">
                     <label for="content">Your comment:</label>
                     <br>

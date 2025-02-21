@@ -15,6 +15,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::orderBy('created_at', 'desc')->get();
+
         return view('posts.index', compact('posts'));
     }
 
@@ -23,8 +24,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        $user_id = Auth::id();
-        return view('posts.create', compact('user_id'));
+        return view('posts.create');
     }
 
     /**
@@ -34,6 +34,9 @@ class PostController extends Controller
     {
         
         $validated = $request->validated();
+
+        $validated['user_id'] = Auth::id();
+        
         Post::create($validated);
 
         return redirect()->route('posts.index');
@@ -44,31 +47,6 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        $user_id = Auth::id();
-        return view('posts.show', compact('post', 'user_id'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return view('posts.show', compact('post'));
     }
 }

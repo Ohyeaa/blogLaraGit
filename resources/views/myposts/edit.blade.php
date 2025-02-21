@@ -2,12 +2,13 @@
 
 @section('content')
     <main>
-        <h1>What's on your mind?</h1>
-        <form action="{{ route('posts.store') }}" method="POST" class="write-form">
+        <h1>Editing your post...</h1>
+        <form action="{{ route('myposts.update', $post->id) }}" method="POST" class="write-form">
             @csrf
+            @method('PUT')
             <div class="form-field">
                 <label for="title">Title</label>
-                <input type="text" id="title" name="title">
+                <input id="title" name="title">
             </div>
             <br>
             <div class="form-field">
