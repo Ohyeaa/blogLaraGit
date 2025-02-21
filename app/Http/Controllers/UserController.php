@@ -19,13 +19,7 @@ class UserController extends Controller
     {
         $validated = $request->validated();
 
-        $user = new User();
-        $user->name = $validated['name'];
-        $user->email = $validated['email'];
-        $user->password = $validated['password'];
-        $user->save();
-        //mass assignment: User::create($validated);
-        // auto login: Auth::login($user);
+        User::create($validated);
 
         return redirect()->route('auth.create');
     }

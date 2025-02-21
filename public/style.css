@@ -6,6 +6,7 @@
 main {
     margin-top: 10rem;
     margin-left: 6.56rem;
+    margin-right: 6.56rem;
 }
 
 h1 {
@@ -89,7 +90,7 @@ ul {
     height: min-content;
 }
 
-.form-field input, .form-field textarea {
+.form-field input, .form-field textarea{
     width: 100%;
 }
 
@@ -117,3 +118,21 @@ ul {
 #show-content {
     margin-left: 2.42rem;
 }
+
+#comment-section {
+    margin: 5rem;
+    margin-right: 13.5rem;
+    border-top: 0.01rem solid black;
+}
+
+.comment {
+    margin: 1rem;
+    margin-right: 20rem;
+    border: 0.02 solid black;
+}
+
+h2 {
+    margin-top: 1rem;
+    margin-left: 3.45rem;
+}
+

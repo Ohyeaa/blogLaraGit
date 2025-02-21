@@ -1,7 +1,7 @@
 <nav id="nav">
     <ul>
         <li class="nav-space">
-            <a href="{{ route('posts.index') }}" class="nav-link{{ Route::is('posts.index') ? '-current' : '' }}">All posts</a>
+            <a href="{{ route('posts.index') }}" class="nav-link{{ Route::is('posts.index') ? '-current' : '' }}">Stories</a>
         </li>
         @guest
         <li class="nav-space">
@@ -11,9 +11,13 @@
             <a href="{{ route('user.create') }}" class="nav-link{{ Route::is('user.create') ? '-current' : '' }}">Register</a>
         </li>
         @endguest
+        
         @auth
         <li class="nav-space">
-            <a href="{{ route('posts.create') }}" class="nav-link{{ Route::is('posts.create') ? '-current' : '' }}">Write Post</a>
+            <a href="{{ route('posts.create') }}" class="nav-link{{ Route::is('posts.create') ? '-current' : '' }}">Write</a>
+        </li>
+        <li class="nav-space">
+            <a href="{{ route('myposts.index') }}" class="nav-link{{ Route::is('myposts.index') ? '-current' : '' }}">My Posts</a>
         </li>
         <li class="nav-space">
             <form action=" {{ route('auth.destroy') }}" method="POST">

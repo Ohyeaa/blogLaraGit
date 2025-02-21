@@ -1,7 +1,8 @@
 <?php
 
-
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MyPostsController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -25,7 +26,6 @@ Route::post('/user', [UserController::class, 'store'])->name('user.store'); // C
 
 
 
-
 Route::get('/auth/create', [LoginController::class, 'create'])->name('auth.create'); // CRUD or login?
 
 Route::post('/auth', [LoginController::class, 'store'])->name('auth.store'); // CRUD or...
@@ -34,3 +34,8 @@ Route::delete('/auth/destroy', [LoginController::class, 'destroy'])->name('auth.
 
 
 
+Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
+
+
+
+Route::get('/myposts/index', [MyPostsController::class, 'index'])->name('myposts.index');
