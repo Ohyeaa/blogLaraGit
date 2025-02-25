@@ -22,6 +22,7 @@ h1 {
 button {
     width: 5.4rem;
     height: 1.32rem;
+    margin: 0.15rem;
 }
 
 /* index */
@@ -139,5 +140,16 @@ ul {
 h2 {
     margin-top: 1rem;
     margin-left: 3.45rem;
+}
+
+form {
+    display: inline;
+}
+
+
+select {
+    width: 5.45rem;
+    height: 1.32rem;
+    margin-left: 0.1rem;
 }
 
