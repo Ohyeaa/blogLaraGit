@@ -35,7 +35,7 @@
             @foreach($community_labels as $community_label)
             <li>
                 <p>{{ $community_label->name }}</p>
-                <form action="{{ route('labels.attach', $community_label->id) }}" method="POST">
+                <form action="{{ route('label-user.store', $community_label->id) }}" method="POST">
                     @csrf
                     <button type="submit">Add</button>
                 </form>

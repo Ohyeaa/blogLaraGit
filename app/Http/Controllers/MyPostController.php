@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePostRequest;
+use App\Models\Label;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,9 +15,10 @@ class MyPostController extends Controller
      */
     public function index()
     {
+        $labels = Auth::user()->labels;
         $posts = Post::where('user_id', Auth::id())->get();
         
-        return view('myposts.index', compact('posts'));
+        return view('myposts.index', compact('posts', 'labels'));
     }
 
     /**
@@ -47,8 +49,7 @@ class MyPostController extends Controller
      */
     public function edit(Post $post)
     {
-        return Auth::id() === $post->user_id
-        //or: return Auth::user()->is($post->user)
+        return Auth::id() === $post->user_id //or: return Auth::user()->is($post->user)
         ? view('myposts.edit', compact('post'))
         : abort(401);
     }
@@ -58,7 +59,7 @@ class MyPostController extends Controller
      */
     public function update(StorePostRequest $request, Post $post)
     {
-        $validated = $request->validated(); // for now using StorePostRequest instead of seperate request
+        $validated = $request->validated();
         $post->title = $validated['title'];
         $post->content = $validated['content'];
         $post->save();
