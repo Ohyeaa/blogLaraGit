@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating an account
      */
 
     public function create()

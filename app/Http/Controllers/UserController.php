@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    //register page
+    //registerpage
     public function create()
     {
         return view('user.create');

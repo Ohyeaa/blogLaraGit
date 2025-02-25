@@ -9,10 +9,14 @@
             <input type="text" name="email" id="email" placeholder="example@example.com" value="{{ old('email') }}">
             <label for="password">Password</label>
             <input type="password" id="password" name="password">
-            <button type="submit">Login</button>
-            @if($errors->has('email'))
+            <button type="submit">Login</button> 
+            @if ($errors->any())
                 <div class="error-box">
-                    <p>{{ $errors->first('email') }}</p>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
                 </div>
             @endif
         </form>

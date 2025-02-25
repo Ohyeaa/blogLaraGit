@@ -14,10 +14,13 @@
         
         @auth
         <li class="nav-space">
-            <a href="{{ route('posts.create') }}" class="nav-link{{ Route::is('posts.create') ? '-current' : '' }}">Write</a>
+            <a href="{{ route('myposts.create') }}" class="nav-link{{ Route::is('myposts.create') ? '-current' : '' }}">Write</a>
         </li>
         <li class="nav-space">
             <a href="{{ route('myposts.index') }}" class="nav-link{{ Route::is('myposts.index') ? '-current' : '' }}">My Posts</a>
+        </li>
+        <li class="nav-space">
+            <a href="{{ route('subscribe.edit', Auth::id()) }}" class="nav-link{{ Route::is('subscribe.edit') ? '-current' : '' }}">Premium</a>
         </li>
         <li class="nav-space">
             <form action=" {{ route('auth.destroy') }}" method="POST">

@@ -3,7 +3,7 @@
 @section('content')
     <main>
         <h1>What's on your mind?</h1>
-        <form action="{{ route('posts.store') }}" method="POST" class="write-form">
+        <form action="{{ route('myposts.store') }}" method="POST" class="write-form">
             @csrf
             <div class="form-field">
                 <label for="title">Title</label>

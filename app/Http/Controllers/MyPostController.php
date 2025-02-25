@@ -24,23 +24,22 @@ class MyPostController extends Controller
      */
     public function create()
     {
-        //
+        return view('myposts.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StorePostRequest $request)
     {
-        //
-    }
+        
+        $validated = $request->validated();
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
+        $validated['user_id'] = Auth::id();
+        
+        Post::create($validated);
+
+        return redirect()->route('posts.index');
     }
 
     /**
@@ -48,7 +47,8 @@ class MyPostController extends Controller
      */
     public function edit(Post $post)
     {
-        return Auth::id() === $post->user_id 
+        return Auth::id() === $post->user_id
+        //or: return Auth::user()->is($post->user)
         ? view('myposts.edit', compact('post'))
         : abort(401);
     }
