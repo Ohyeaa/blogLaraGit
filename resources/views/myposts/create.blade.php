@@ -14,18 +14,18 @@
                 <label for="content">Content</label>
                 <textarea name="content" id="content"></textarea>
             </div>
-            <div>
+            <div class="file-input">
                 <label for="image">Upload Image</label>
                 <input type="file" name="image" id="image">
             </div>
-            <div>
+            <div class="mark-premium">
                 <label for="premium">Premium</label>
                 <input type="radio" name="is_premium" id="premium" value="1">
                 <label for="not_premium">Free</label>
                 <input type="radio" name="is_premium" id="not_premium" value="0">
             </div>
             <br>
-            <button type="submit">Save</button>
+            <button type="submit" class="submit-button">Save</button>
         </form>
     </main>
 @endsection

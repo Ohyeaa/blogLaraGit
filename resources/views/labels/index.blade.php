@@ -3,7 +3,7 @@
 @section('content')
 <main>
     <h1>Labels</h1>
-    <section>
+    <section id="new-label">
         <h2>New Label</h2>
         <form action="{{ route('labels.store') }}" method="POST">
             @csrf
@@ -13,7 +13,7 @@
         </form>
     </section>
 
-    <section>
+    <section id="my-labels">
         <h2>My Labels</h2>
         <ul>
         @foreach($labels as $label)
@@ -29,12 +29,12 @@
         </ul>
     </section>
 
-    <section>
+    <section id="add-label">
         <h2>Add existing community label</h2>
         <ul>
             @foreach($community_labels as $community_label)
             <li>
-                <p>{{ $community_label->name }}</p>
+                {{ $community_label->name }}
                 <form action="{{ route('label-user.store', $community_label->id) }}" method="POST">
                     @csrf
                     <button type="submit">Add</button>

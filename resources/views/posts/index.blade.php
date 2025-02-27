@@ -4,18 +4,19 @@
     <main>
         <h1>Overview</h1>
 
-
-        <form action="" method="">
+    <section id="filter-section">
+        <form action="{{ route('posts.index') }}" method="GET">
             @csrf
-            <label for="label">Labels</label>
-            <select name="label" id="label">
+            <label for="label_id">Labels</label>
+            <select name="label_id" id="label_id">
                 @foreach ($labels as $label)
-                    <option value="{{ $label->name }}">{{ $label->name }}</option>
+                    <option value="{{ $label->id }}">{{ $label->name }}</option>
                 @endforeach
             </select>
             <button type="submit">Filter</button>
         </form>
-
+        <a href="{{ route('posts.index') }}"><button>clear</button></a>
+    </section>
 
         <ul>
         @foreach($posts as $post)

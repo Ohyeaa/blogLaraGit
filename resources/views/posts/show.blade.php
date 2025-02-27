@@ -24,7 +24,7 @@
         </section>
 
         @auth
-            <section>
+            <section id="comment-input">
                 <form action="{{ route('comments.store') }}" method="POST" class="form-field">
                     @csrf
                     <input type="hidden" name="post_id" value="{{ $post->id }}">
@@ -32,7 +32,7 @@
                     <br>
                     <textarea name="content" id="content"></textarea>
                     <br>
-                    <button type="submit">Submit</button>
+                    <button type="submit" class="submit-button">Submit</button>
                 </form>
             </section>
         @endauth

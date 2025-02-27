@@ -13,14 +13,19 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $posts = Post::where('is_premium', '0')->orderBy('created_at', 'desc')->get();
+        $query = Post::query();
 
-        if (Auth::check() && Auth::user()->has_premium === 1) {
-            $posts = Post::orderBy('created_at', 'desc')->get();
+        if (!Auth::check() || Auth::user()->has_premium === 0) {
+            $query->where('is_premium', '0');
         }
 
+        if ($request->label_id) {
+            $query->whereRelation('labels', 'id', $request->label_id);
+        }
+
+        $posts = $query->orderBy('created_at', 'desc')->get();
         $labels = Label::all();
 
         return view('posts.index', compact('posts', 'labels'));

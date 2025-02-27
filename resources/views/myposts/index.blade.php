@@ -3,7 +3,9 @@
 @section('content')
     <main>
         <h1>My Posts</h1>
-        <a href="{{ route('labels.index') }}">Manage Labels</a>
+        <section id="manage-labels">
+            <a href="{{ route('labels.index') }}">Manage Labels</a>
+        </section>
         <section>
             <ul>
             @foreach($posts as $post)

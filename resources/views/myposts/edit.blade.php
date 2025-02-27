@@ -15,7 +15,7 @@
                 <label for="content">Content</label>
                 <textarea name="content" id="content">{{ $post->content }}</textarea>
             </div>
-            <div>
+            <div class="file-input">
                 <label for="image">Upload Image</label>
                 <input type="file" name="image" id="image">
             </div>
@@ -25,11 +25,8 @@
                 <label for="not_premium">Free</label>
                 <input type="radio" name="is_premium" id="not_premium" value="0" {{ $post->is_premium === 0 ? 'checked' : 0 }}>
             </div>
-
-
-
             <br>
-            <button type="submit">Save</button>
+            <button type="submit" class="submit-button">Save</button>
         </form>
     </main>
 @endsection

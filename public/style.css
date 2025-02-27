@@ -29,6 +29,19 @@ button {
     margin: 0.15rem;
 }
 
+#subscribe-button {
+    margin-left: 2.57rem;
+}
+
+.submit-button {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.file-input {
+    margin-top: 0.5rem;
+}
+
 /* index */
 
 .post-container a:hover {
@@ -50,6 +63,24 @@ button {
 
 ul {
     list-style-type: none;
+}
+
+#filter-section {
+    margin-left: 2.55rem;
+    margin-bottom: 0.3rem;
+}
+
+#manage-labels {
+    margin-left: 2.5rem;
+    margin-bottom: 0.3rem;
+}
+
+#manage-labels a {
+    color: cadetblue;
+}
+
+#manage-labels a:hover {
+    color: blue;
 }
 
 /** nav */
@@ -109,7 +140,7 @@ ul {
     height: 18rem;
 }
 
-.write-form {
+.write-form .form-field, .write-form .file-input, .write-form .mark-premium, .write-form button  {
     margin-left: 2.64rem;
 }
 
@@ -146,6 +177,10 @@ ul {
     border: 0.02 solid black;
 }
 
+#comment-input {
+    margin-left: 3.5rem;
+}
+
 h2 {
     margin-top: 1rem;
     margin-left: 3.45rem;
@@ -161,3 +196,21 @@ select {
     margin-left: 0.1rem;
 }
 
+/* new labels */
+
+#new-label h2 {
+    margin-left: 0;
+}
+
+#new-label {
+    margin-left: 2.45rem;
+    margin-bottom: 2.18rem;
+}
+
+#my-labels h2, #add-label h2 {
+    margin-left: 2.5rem;
+}
+
+#add-labels form {
+    display: inline;
+}
