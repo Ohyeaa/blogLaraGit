@@ -8,13 +8,22 @@
             @method('PUT')
             <div class="form-field">
                 <label for="title">Title</label>
-                <input id="title" name="title">
+                <input id="title" name="title" value="{{ $post->title }}">
             </div>
             <br>
             <div class="form-field">
                 <label for="content">Content</label>
-                <textarea name="content" id="content"></textarea>
+                <textarea name="content" id="content">{{ $post->content }}</textarea>
             </div>
+            <div>
+                <label for="premium">Premium</label>
+                <input type="radio" name="is_premium" id="premium" value="1" {{ $post->is_premium === 1 ? 'checked' : '' }}  >
+                <label for="not_premium">Free</label>
+                <input type="radio" name="is_premium" id="not_premium" value="0" {{ $post->is_premium === 0 ? 'checked' : 0 }}>
+            </div>
+
+
+
             <br>
             <button type="submit">Save</button>
         </form>

@@ -3,7 +3,7 @@
 @section('content')
 <main>
     <h1>Subscription</h1>
-    <form action="{{ route('subscribe.update', $user->id) }}", method="POST">
+    <form action="{{ route('subscribe.update', Auth::id()) }}", method="POST">
         @csrf
         @method('patch')
         <button type="submit">Subscribe</button>

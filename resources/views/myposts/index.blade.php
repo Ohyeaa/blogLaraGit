@@ -16,9 +16,11 @@
                             @foreach ($post->labels as $post_label)
                             <span>
                                 {{ $post_label->name }}
-                                <form action="" method="POST">
+                                <form action="{{ route('label-post.destroy', $post->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <input type="hidden" name="label_id" value="{{ $post_label->id }}">
                                     <button type="submit">x</button>
-
                                 </form>
                             </span>
                             @endforeach

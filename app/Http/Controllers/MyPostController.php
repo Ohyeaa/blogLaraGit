@@ -60,9 +60,7 @@ class MyPostController extends Controller
     public function update(StorePostRequest $request, Post $post)
     {
         $validated = $request->validated();
-        $post->title = $validated['title'];
-        $post->content = $validated['content'];
-        $post->save();
+        $post->update($validated);
         return redirect()->route('myposts.index');
     }
 

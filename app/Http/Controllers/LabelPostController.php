@@ -12,4 +12,10 @@ class LabelPostController extends Controller
         $post->labels()->syncWithoutDetaching($request->label_id);
         return back();
     }
+
+    public function destroy(Request $request, Post $post)
+    {
+        $post->labels()->detach($request->label_id);
+        return back();
+    }
 }

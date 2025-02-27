@@ -14,7 +14,11 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('created_at', 'desc')->get();
+        $posts = Post::where('is_premium', '0')->orderBy('created_at', 'desc')->get();
+
+        if (Auth::check() && Auth::user()->has_premium === 1) {
+            $posts = Post::orderBy('created_at', 'desc')->get();
+        }
 
         return view('posts.index', compact('posts'));
     }

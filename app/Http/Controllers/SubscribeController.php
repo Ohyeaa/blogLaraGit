@@ -15,7 +15,7 @@ class SubscribeController extends Controller
             abort(401);
         }
 
-        return view('subscribe.edit', compact('user'));
+        return view('subscribe.edit');
     }
 
     public function update(User $user)

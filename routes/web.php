@@ -50,3 +50,4 @@ Route::post('/label-user/{label}', [LabelUserController::class, 'store'])->name(
 Route::delete('/labels/{label}', [LabelUserController::class, 'destroy'])->name('labels.destroy');
 //label-post
 Route::post('/label-post/{post}', [LabelPostController::class, 'store'])->name('label-post.store');
+Route::delete('/label-post/{post}', [LabelPostController::class, 'destroy'])->name('label-post.destroy');

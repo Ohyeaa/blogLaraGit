@@ -6,9 +6,18 @@
         <ul>
         @foreach($posts as $post)
             <li class="post-container">
-                <a href="{{ route('posts.show', $post->id) }}">{{ $post->title }}</a> 
-                <br>
-                Published {{ $post->created_at }}
+                <div>
+                    <a href="{{ route('posts.show', $post->id) }}">{{ $post->title }}</a>
+                    <p>by {{ $post->user->name }} - {{ $post->created_at }}</p>
+                </div>
+                <br><hr>
+
+                <div class="post-label-div">
+                    <h4>labels:</h4>
+                    @foreach ($post->labels as $post_label)
+                        <p>{{ $post_label->name }},</p>
+                    @endforeach
+                </div>
             </li>
             <br>
         @endforeach

@@ -14,6 +14,12 @@
                 <label for="content">Content</label>
                 <textarea name="content" id="content"></textarea>
             </div>
+            <div>
+                <label for="premium">Premium</label>
+                <input type="radio" name="is_premium" id="premium" value="1">
+                <label for="not_premium">Free</label>
+                <input type="radio" name="is_premium" id="not_premium" value="0">
+            </div>
             <br>
             <button type="submit">Save</button>
         </form>
