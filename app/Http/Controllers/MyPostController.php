@@ -7,6 +7,7 @@ use App\Models\Label;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class MyPostController extends Controller
 {
@@ -34,13 +35,15 @@ class MyPostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        
         $validated = $request->validated();
-
         $validated['user_id'] = Auth::id();
-        
-        Post::create($validated);
 
+        if ($request->hasFile('image')) {
+            $validated['image'] = $request->file('image')->store(options: 'public');
+        }
+
+        Post::create($validated);
+        
         return redirect()->route('posts.index');
     }
 
@@ -60,6 +63,13 @@ class MyPostController extends Controller
     public function update(StorePostRequest $request, Post $post)
     {
         $validated = $request->validated();
+
+        if ($request->hasFile('image')) {
+            Storage::delete($post->image);
+            dd($post->image);
+            $validated['image'] = $request->file('image')->store(options: 'public');
+        }
+
         $post->update($validated);
         return redirect()->route('myposts.index');
     }

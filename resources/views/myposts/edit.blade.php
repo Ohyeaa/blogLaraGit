@@ -3,7 +3,7 @@
 @section('content')
     <main>
         <h1>Editing your post...</h1>
-        <form action="{{ route('myposts.update', $post->id) }}" method="POST" class="write-form">
+        <form action="{{ route('myposts.update', $post->id) }}" method="POST" class="write-form" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="form-field">
@@ -14,6 +14,10 @@
             <div class="form-field">
                 <label for="content">Content</label>
                 <textarea name="content" id="content">{{ $post->content }}</textarea>
+            </div>
+            <div>
+                <label for="image">Upload Image</label>
+                <input type="file" name="image" id="image">
             </div>
             <div>
                 <label for="premium">Premium</label>

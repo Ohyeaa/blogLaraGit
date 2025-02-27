@@ -3,6 +3,20 @@
 @section('content')
     <main>
         <h1>Overview</h1>
+
+
+        <form action="" method="">
+            @csrf
+            <label for="label">Labels</label>
+            <select name="label" id="label">
+                @foreach ($labels as $label)
+                    <option value="{{ $label->name }}">{{ $label->name }}</option>
+                @endforeach
+            </select>
+            <button type="submit">Filter</button>
+        </form>
+
+
         <ul>
         @foreach($posts as $post)
             <li class="post-container">

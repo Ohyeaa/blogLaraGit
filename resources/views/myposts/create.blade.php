@@ -3,7 +3,7 @@
 @section('content')
     <main>
         <h1>What's on your mind?</h1>
-        <form action="{{ route('myposts.store') }}" method="POST" class="write-form">
+        <form action="{{ route('myposts.store') }}" method="POST" class="write-form" enctype="multipart/form-data">
             @csrf
             <div class="form-field">
                 <label for="title">Title</label>
@@ -13,6 +13,10 @@
             <div class="form-field">
                 <label for="content">Content</label>
                 <textarea name="content" id="content"></textarea>
+            </div>
+            <div>
+                <label for="image">Upload Image</label>
+                <input type="file" name="image" id="image">
             </div>
             <div>
                 <label for="premium">Premium</label>

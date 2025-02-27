@@ -4,6 +4,11 @@
     <main>
         <article id="show-content-box">
             <h1>{{ $post->title }}</h1>
+            @if($post->image)
+                <section id="image-box">
+                    <img src="{{ asset('storage/' . $post->image) }}" alt="post image" width="750" height="460" />
+                </section>
+            @endif
             <p id="show-content">{{ $post->content }}</p>
         </article>
 

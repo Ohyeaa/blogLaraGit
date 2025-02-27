@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('content');
+            $table->binary('image')->nullable();
             $table->boolean('is_premium')->default(false);
             $table->foreignIdFor(User::class);
             $table->timestamps();

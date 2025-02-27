@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePostRequest;
+use App\Models\Label;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
@@ -20,7 +21,9 @@ class PostController extends Controller
             $posts = Post::orderBy('created_at', 'desc')->get();
         }
 
-        return view('posts.index', compact('posts'));
+        $labels = Label::all();
+
+        return view('posts.index', compact('posts', 'labels'));
     }
 
 

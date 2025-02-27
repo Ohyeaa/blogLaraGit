@@ -129,6 +129,11 @@ ul {
     margin-left: 2.42rem;
 }
 
+#image-box {
+    margin-left: 2.5rem;
+    margin-bottom: 0.7rem;
+}
+
 #comment-section {
     margin: 5rem;
     margin-right: 13.5rem;
@@ -149,8 +154,6 @@ h2 {
 form, .post-label-div p {
     display: inline;
 }
-
-
 
 select {
     width: 5.45rem;
