@@ -11,13 +11,15 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\LabelUserController;
 use Illuminate\Support\Facades\Route;
 
+// Route::resource('articles', ArticleController::class);
+// Route::get('articles/{article}/premium', [ArticleController::class, 'premium'])->name('article.premium');
 
 //posts, public
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 Route::redirect('/', '/posts');
 Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
 
-//myposts /seperate from posts or not???
+//myposts
 Route::get('/myposts', [MyPostController::class, 'index'])->name('myposts.index');
 Route::get('/myposts/create', [MyPostController::class, 'create'])->name('myposts.create');
 Route::post('/posts', [MyPostController::class, 'store'])->name('myposts.store');

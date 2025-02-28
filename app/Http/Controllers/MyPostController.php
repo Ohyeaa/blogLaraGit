@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePostRequest;
-use App\Models\Label;
 use App\Models\Post;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
@@ -17,7 +15,7 @@ class MyPostController extends Controller
     public function index()
     {
         $labels = Auth::user()->labels;
-        $posts = Post::where('user_id', Auth::id())->get();
+        $posts = Auth::user()->posts; // $posts = Post::where('user_id', Auth::id())->get();
         
         return view('myposts.index', compact('posts', 'labels'));
     }
@@ -65,8 +63,9 @@ class MyPostController extends Controller
         $validated = $request->validated();
 
         if ($request->hasFile('image')) {
-            Storage::delete($post->image);
-            dd($post->image);
+            if ($post->image) {
+                Storage::disk('public')->delete($post->image);
+            }
             $validated['image'] = $request->file('image')->store(options: 'public');
         }
 

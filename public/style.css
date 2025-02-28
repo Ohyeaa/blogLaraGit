@@ -144,6 +144,8 @@ ul {
     margin-left: 2.64rem;
 }
 
+
+
 /* login */
 
 .credential-form {
@@ -151,6 +153,10 @@ ul {
 }
 
 /* show post */
+
+p {
+    white-space: pre-wrap;
+}
 
 #show-content-box {
     margin-right: 9rem;
